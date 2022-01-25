@@ -37,28 +37,33 @@ public class App
             } while (length <= 0);
 
         }
-        public void makeString()
+        public int makeString()
         {
             int index = 0;
+	    int length1 = 0;
+		
             str1 = new char[length];
             for (int i = 0; i < length; i++)
             {
                 index = rnd(0,25);
                 str1[i] = alphabet[index];
+		length1++;
             }
             System.out.print(str1);
+            return length1;
         }
     };
 
     public static void main( String[] args )
     {
+	 int strLength;
          MakeStr str = new MakeStr();
             while(true)
             {
                 str.putLength();
                 if (str.length == 999)
                     break;
-                str.makeString();
+                strLength = str.makeString();
             }
     }
 }
