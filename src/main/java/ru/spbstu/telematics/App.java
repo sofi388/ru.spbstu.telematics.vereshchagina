@@ -24,10 +24,17 @@ public class App
         }
         public void putLength()
         {
-            Scanner in = new Scanner(System.in);
-            System.out.print("\nPut the string length: ");
-            System.out.print("\nIf you want quit - press 999: ");
-            length = in.nextInt();
+            Scanner sc = new Scanner(System.in);
+            // int number;
+            do {
+                System.out.print("\nPut the string length: ");
+                System.out.print("\nIf you want quit - press 999: ");
+                while (!sc.hasNextInt()) {  //проверка положительного int (целочисленного)
+                    System.out.println("That not a number!");
+                    sc.next(); // this is important!
+                }
+                length = sc.nextInt();
+            } while (length <= 0);
 
         }
         public void makeString()
